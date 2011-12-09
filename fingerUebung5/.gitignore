@@ -1,4 +1,4 @@
-*/persistence.xml
+build/web/WEB-INF/classes/META-INF/persistence.xml
 *.class
 *.properties
 *.DS_Store
