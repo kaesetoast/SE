@@ -13,83 +13,98 @@ import javax.persistence.OneToOne;
 public class Mitarbeiter implements Serializable {
 
     @Id
-    @GeneratedValue (strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     private String name;
     private String abteilung;
     private int personalnr;
     @OneToOne
     private Mitarbeiterbild bild;
-    @OneToMany (mappedBy="autor")
+    // Bidirektional macht hier Sinn
+    @OneToMany(mappedBy = "autor")
     private Collection<Beitrag> myBeitraege;
 
     /**
      * @return the id
      */
     public long getId() {
-        return id;
+	return id;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(long id) {
-        this.id = id;
+	this.id = id;
     }
 
     /**
      * @return the name
      */
     public String getName() {
-        return name;
+	return name;
     }
 
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     /**
      * @return the abteilung
      */
     public String getAbteilung() {
-        return abteilung;
+	return abteilung;
     }
 
     /**
      * @param abteilung the abteilung to set
      */
     public void setAbteilung(String abteilung) {
-        this.abteilung = abteilung;
+	this.abteilung = abteilung;
     }
 
     /**
      * @return the personalnr
      */
     public int getPersonalnr() {
-        return personalnr;
+	return personalnr;
     }
 
     /**
      * @param personalnr the personalnr to set
      */
     public void setPersonalnr(int personalnr) {
-        this.personalnr = personalnr;
+	this.personalnr = personalnr;
+    }
+
+    /**
+     * @return the bild
+     */
+    public Mitarbeiterbild getBild() {
+	return bild;
+    }
+
+    /**
+     * @param bild the bild to set
+     */
+    public void setBild(Mitarbeiterbild bild) {
+	this.bild = bild;
     }
 
     /**
      * @return the myBeitraege
      */
     public Collection<Beitrag> getMyBeitraege() {
-        return myBeitraege;
+	return myBeitraege;
     }
 
     /**
      * @param myBeitraege the myBeitraege to set
      */
     public void setMyBeitraege(Collection<Beitrag> myBeitraege) {
-        this.myBeitraege = myBeitraege;
+	this.myBeitraege = myBeitraege;
     }
 }

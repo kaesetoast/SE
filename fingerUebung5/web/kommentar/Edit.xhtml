@@ -17,10 +17,6 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditKommentarLabel_id}" for="id" />
                     <h:inputText id="id" value="#{kommentarController.selected.id}" title="#{bundle.EditKommentarTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditKommentarLabel_beitrag}" for="beitrag" />
-                    <h:selectOneMenu id="beitrag" value="#{kommentarController.selected.beitrag}" title="#{bundle.EditKommentarTitle_beitrag}" >
-                        <f:selectItems value="#{beitragController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.EditKommentarLabel_id}" for="id" />
                     <h:inputText id="id" value="#{kommentarController.selected.id}" title="#{bundle.EditKommentarTitle_id}" />
                     <h:outputLabel value="#{bundle.EditKommentarLabel_datum}" for="datum" />

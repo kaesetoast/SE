@@ -27,10 +27,6 @@
                     <h:inputText id="breite" value="#{bildController.selected.breite}" title="#{bundle.CreateBildTitle_breite}" />
                     <h:outputLabel value="#{bundle.CreateBildLabel_titel}" for="titel" />
                     <h:inputText id="titel" value="#{bildController.selected.titel}" title="#{bundle.CreateBildTitle_titel}" />
-                    <h:outputLabel value="#{bundle.CreateBildLabel_beitrag}" for="beitrag" />
-                    <h:selectOneMenu id="beitrag" value="#{bildController.selected.beitrag}" title="#{bundle.CreateBildTitle_beitrag}" >
-                        <f:selectItems value="#{beitragController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{bildController.create}" value="#{bundle.CreateBildSaveLink}" />
