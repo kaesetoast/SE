@@ -1,1 +1,5 @@
 */persistence.xml
+*.class
+*.properties
+*.DS_Store
+*/glassfish-ressources.xml
