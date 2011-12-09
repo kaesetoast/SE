@@ -1,5 +1,5 @@
 build/web/WEB-INF/classes/META-INF/persistence.xml
 *.class
 *.properties
-*.DS_Store
+.DS_Store
 */glassfish-ressources.xml
