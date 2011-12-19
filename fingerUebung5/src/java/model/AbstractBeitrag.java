@@ -22,7 +22,7 @@ public abstract class AbstractBeitrag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    protected long id;
     @Temporal(TemporalType.DATE)
     protected Date datum;
     protected int bewertung;
