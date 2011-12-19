@@ -22,7 +22,7 @@ public class Mitarbeiter implements Serializable {
     private Mitarbeiterbild bild;
     // Bidirektional macht hier Sinn
     @OneToMany(mappedBy = "autor")
-    private Collection<AbstractBeitrag> myBeitraege;
+    private Collection<Beitrag> myBeitraege;
 
     /**
      * @return the id
@@ -97,14 +97,15 @@ public class Mitarbeiter implements Serializable {
     /**
      * @return the myBeitraege
      */
-    public Collection<AbstractBeitrag> getMyBeitraege() {
+    public Collection<Beitrag> getMyBeitraege() {
         return myBeitraege;
     }
 
     /**
      * @param myBeitraege the myBeitraege to set
      */
-    public void setMyBeitraege(Collection<AbstractBeitrag> myBeitraege) {
+    public void setMyBeitraege(Collection<Beitrag> myBeitraege) {
         this.myBeitraege = myBeitraege;
     }
+
 }
