@@ -107,5 +107,10 @@ public class Mitarbeiter implements Serializable {
     public void setMyBeitraege(Collection<Beitrag> myBeitraege) {
         this.myBeitraege = myBeitraege;
     }
+    
+    @Override
+    public String toString () {
+        return getName();
+    }
 
 }
