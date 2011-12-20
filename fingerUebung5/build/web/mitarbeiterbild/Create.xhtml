@@ -15,8 +15,18 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{mitarbeiterbildController.selected.id}" title="#{bundle.CreateMitarbeiterbildTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_url}" for="url" />
+                    <h:inputText id="url" value="#{mitarbeiterbildController.selected.url}" title="#{bundle.CreateMitarbeiterbildTitle_url}" />
+                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_datum}" for="datum" />
+                    <h:inputText id="datum" value="#{mitarbeiterbildController.selected.datum}" title="#{bundle.CreateMitarbeiterbildTitle_datum}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_laenge}" for="laenge" />
+                    <h:inputText id="laenge" value="#{mitarbeiterbildController.selected.laenge}" title="#{bundle.CreateMitarbeiterbildTitle_laenge}" />
+                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_breite}" for="breite" />
+                    <h:inputText id="breite" value="#{mitarbeiterbildController.selected.breite}" title="#{bundle.CreateMitarbeiterbildTitle_breite}" />
+                    <h:outputLabel value="#{bundle.CreateMitarbeiterbildLabel_titel}" for="titel" />
+                    <h:inputText id="titel" value="#{mitarbeiterbildController.selected.titel}" title="#{bundle.CreateMitarbeiterbildTitle_titel}" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{mitarbeiterbildController.create}" value="#{bundle.CreateMitarbeiterbildSaveLink}" />

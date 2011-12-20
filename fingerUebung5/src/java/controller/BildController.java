@@ -18,14 +18,14 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
-@ManagedBean (name="bildController")
+@ManagedBean(name = "bildController")
 @SessionScoped
 public class BildController implements Serializable {
 
-
     private Bild current;
     private DataModel items = null;
-    @EJB private facade.BildFacade ejbFacade;
+    @EJB
+    private facade.BildFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -43,6 +43,7 @@ public class BildController implements Serializable {
     private BildFacade getFacade() {
         return ejbFacade;
     }
+
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +55,7 @@ public class BildController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
                 }
             };
         }
@@ -67,7 +68,7 @@ public class BildController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Bild)getItems().getRowData();
+        current = (Bild) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -90,7 +91,7 @@ public class BildController implements Serializable {
     }
 
     public String prepareEdit() {
-        current = (Bild)getItems().getRowData();
+        current = (Bild) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -107,7 +108,7 @@ public class BildController implements Serializable {
     }
 
     public String destroy() {
-        current = (Bild)getItems().getRowData();
+        current = (Bild) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreateModel();
@@ -140,14 +141,14 @@ public class BildController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count-1;
+            selectedItemIndex = count - 1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
         }
     }
 
@@ -182,25 +183,25 @@ public class BildController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    @FacesConverter(forClass=Bild.class)
+    @FacesConverter(forClass = Bild.class)
     public static class BildControllerConverter implements Converter {
 
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            BildController controller = (BildController)facesContext.getApplication().getELResolver().
+            BildController controller = (BildController) facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "bildController");
             return controller.ejbFacade.find(getKey(value));
         }
 
-        java.lang.String getKey(String value) {
-            java.lang.String key;
-            key = value;
+        java.lang.Long getKey(String value) {
+            java.lang.Long key;
+            key = Long.valueOf(value);
             return key;
         }
 
-        String getStringKey(java.lang.String value) {
+        String getStringKey(java.lang.Long value) {
             StringBuffer sb = new StringBuffer();
             sb.append(value);
             return sb.toString();
@@ -212,12 +213,10 @@ public class BildController implements Serializable {
             }
             if (object instanceof Bild) {
                 Bild o = (Bild) object;
-                return getStringKey(o.getUrl());
+                return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+BildController.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + BildController.class.getName());
             }
         }
-
     }
-
 }

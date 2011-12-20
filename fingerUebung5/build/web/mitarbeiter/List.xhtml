@@ -46,6 +46,12 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterTitle_bild}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bild}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
                             <h:commandLink action="#{mitarbeiterController.prepareView}" value="#{bundle.ListMitarbeiterViewLink}"/>

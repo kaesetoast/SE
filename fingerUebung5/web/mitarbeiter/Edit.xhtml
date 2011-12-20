@@ -23,6 +23,10 @@
                     <h:inputText id="abteilung" value="#{mitarbeiterController.selected.abteilung}" title="#{bundle.EditMitarbeiterTitle_abteilung}" />
                     <h:outputLabel value="#{bundle.EditMitarbeiterLabel_personalnr}" for="personalnr" />
                     <h:inputText id="personalnr" value="#{mitarbeiterController.selected.personalnr}" title="#{bundle.EditMitarbeiterTitle_personalnr}" />
+                    <h:outputLabel value="#{bundle.EditMitarbeiterLabel_bild}" for="bild" />
+                    <h:selectOneMenu id="bild" value="#{mitarbeiterController.selected.bild}" title="#{bundle.EditMitarbeiterTitle_bild}" >
+                        <f:selectItems value="#{mitarbeiterbildController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <h:commandLink action="#{mitarbeiterController.update}" value="#{bundle.EditMitarbeiterSaveLink}"/>
                 <br />

@@ -17,6 +17,18 @@
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_id}"/>
                     <h:outputText value="#{mitarbeiterbildController.selected.id}" title="#{bundle.ViewMitarbeiterbildTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_url}"/>
+                    <h:outputText value="#{mitarbeiterbildController.selected.url}" title="#{bundle.ViewMitarbeiterbildTitle_url}"/>
+                    <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_datum}"/>
+                    <h:outputText value="#{mitarbeiterbildController.selected.datum}" title="#{bundle.ViewMitarbeiterbildTitle_datum}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_laenge}"/>
+                    <h:outputText value="#{mitarbeiterbildController.selected.laenge}" title="#{bundle.ViewMitarbeiterbildTitle_laenge}"/>
+                    <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_breite}"/>
+                    <h:outputText value="#{mitarbeiterbildController.selected.breite}" title="#{bundle.ViewMitarbeiterbildTitle_breite}"/>
+                    <h:outputText value="#{bundle.ViewMitarbeiterbildLabel_titel}"/>
+                    <h:outputText value="#{mitarbeiterbildController.selected.titel}" title="#{bundle.ViewMitarbeiterbildTitle_titel}"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{mitarbeiterbildController.destroyAndView}" value="#{bundle.ViewMitarbeiterbildDestroyLink}"/>

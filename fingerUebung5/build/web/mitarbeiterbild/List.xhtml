@@ -28,6 +28,38 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterbildTitle_url}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.url}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterbildTitle_datum}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datum}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterbildTitle_laenge}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.laenge}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterbildTitle_breite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.breite}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMitarbeiterbildTitle_titel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.titel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
                             <h:commandLink action="#{mitarbeiterbildController.prepareView}" value="#{bundle.ListMitarbeiterbildViewLink}"/>

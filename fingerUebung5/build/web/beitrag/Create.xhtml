@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateBeitragLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{beitragController.selected.id}" title="#{bundle.CreateBeitragTitle_id}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_datum}" for="datum" />
                     <h:inputText id="datum" value="#{beitragController.selected.datum}" title="#{bundle.CreateBeitragTitle_datum}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />

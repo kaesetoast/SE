@@ -17,6 +17,18 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_id}" for="id" />
                     <h:inputText id="id" value="#{mitarbeiterbildController.selected.id}" title="#{bundle.EditMitarbeiterbildTitle_id}" />
+                    <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_url}" for="url" />
+                    <h:inputText id="url" value="#{mitarbeiterbildController.selected.url}" title="#{bundle.EditMitarbeiterbildTitle_url}" />
+                    <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_datum}" for="datum" />
+                    <h:inputText id="datum" value="#{mitarbeiterbildController.selected.datum}" title="#{bundle.EditMitarbeiterbildTitle_datum}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_laenge}" for="laenge" />
+                    <h:inputText id="laenge" value="#{mitarbeiterbildController.selected.laenge}" title="#{bundle.EditMitarbeiterbildTitle_laenge}" />
+                    <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_breite}" for="breite" />
+                    <h:inputText id="breite" value="#{mitarbeiterbildController.selected.breite}" title="#{bundle.EditMitarbeiterbildTitle_breite}" />
+                    <h:outputLabel value="#{bundle.EditMitarbeiterbildLabel_titel}" for="titel" />
+                    <h:inputText id="titel" value="#{mitarbeiterbildController.selected.titel}" title="#{bundle.EditMitarbeiterbildTitle_titel}" />
                 </h:panelGrid>
                 <h:commandLink action="#{mitarbeiterbildController.update}" value="#{bundle.EditMitarbeiterbildSaveLink}"/>
                 <br />

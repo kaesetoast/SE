@@ -15,10 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateKommentarLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{kommentarController.selected.id}" title="#{bundle.CreateKommentarTitle_id}" />
-                    <h:outputLabel value="#{bundle.CreateKommentarLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{kommentarController.selected.id}" title="#{bundle.CreateKommentarTitle_id}" />
                     <h:outputLabel value="#{bundle.CreateKommentarLabel_datum}" for="datum" />
                     <h:inputText id="datum" value="#{kommentarController.selected.datum}" title="#{bundle.CreateKommentarTitle_datum}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
