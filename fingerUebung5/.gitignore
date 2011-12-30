@@ -4,4 +4,4 @@ nbproject/project.properties
 build-impl.xml~
 *.class
 .DS_Store
-setup/glassfish-resources.xml
+fingerUebung5/setup/glassfish-resources.xml
