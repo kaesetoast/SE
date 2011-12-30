@@ -27,7 +27,7 @@
                     <h:inputText id="beschreibung" value="#{beitragController.selected.beschreibung}" title="#{bundle.CreateBeitragTitle_beschreibung}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_autor}" for="autor" />
                     <h:selectOneMenu id="autor" value="#{beitragController.selected.autor}" title="#{bundle.CreateBeitragTitle_autor}" >
-                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
+                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}" />
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
