@@ -105,4 +105,10 @@ public class Bild implements Serializable {
     public void setTitel(String titel) {
 	this.titel = titel;
     }
+
+    @Override
+    public String toString() {
+	// TODO: hier später image-viewer
+	return this.url;
+    }
 }
