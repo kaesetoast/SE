@@ -5,3 +5,5 @@ build-impl.xml~
 *.class
 .DS_Store
 fingerUebung5/setup/glassfish-resources.xml
+nbproject/genfiles.properties
+nbproject/project.xml
