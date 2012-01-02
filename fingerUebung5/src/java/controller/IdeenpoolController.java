@@ -4,15 +4,12 @@
  */
 package controller;
 
-import controller.util.PaginationHelper;
 import facade.IdeeFacade;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
 import model.Idee;
 
 /**
