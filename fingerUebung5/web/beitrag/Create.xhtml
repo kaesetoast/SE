@@ -24,7 +24,7 @@
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_titel}" for="titel" />
                     <h:inputText id="titel" value="#{beitragController.selected.titel}" title="#{bundle.CreateBeitragTitle_titel}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_beschreibung}" for="beschreibung" />
-                    <h:inputText id="beschreibung" value="#{beitragController.selected.beschreibung}" title="#{bundle.CreateBeitragTitle_beschreibung}" />
+                    <h:inputTextarea id="beschreibung" rows="5" cols="39" value="#{beitragController.selected.beschreibung}" title="#{bundle.CreateBeitragTitle_beschreibung}"/>
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_autor}" for="autor" />
                     <h:selectOneMenu id="autor" value="#{beitragController.selected.autor}" title="#{bundle.CreateBeitragTitle_autor}" >
                         <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}" />
