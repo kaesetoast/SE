@@ -30,15 +30,9 @@ public class IdeenpoolController implements Serializable {
         return ideeFacade;
     }
     
-    public String getItems() {
+    public List<Idee> getItems() {
         List<Idee> ideen = ideeFacade.findAll();
-        StringBuilder erg = new StringBuilder();
-        erg.append("<table><thead><tr><th>Datum</th></tr></thead><tbody>");
-        for (Idee idee : ideen) {
-               erg.append("<tr><td>" + idee.getDatum().toString() + "</td></tr>");
-        }
-        erg.append("</tbody></table>");
-        return erg.toString();
+        return ideen;
     }
     
 }

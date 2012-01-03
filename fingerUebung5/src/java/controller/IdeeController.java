@@ -4,7 +4,6 @@ import model.Idee;
 import controller.util.JsfUtil;
 import controller.util.PaginationHelper;
 import facade.IdeeFacade;
-
 import java.io.Serializable;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
