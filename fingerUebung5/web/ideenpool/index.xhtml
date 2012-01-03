@@ -11,7 +11,7 @@
             <f:view>
                 <h:form>
                     <h1><h:outputText value="List"/></h1>
-                    <h:dataTable value="#{ideenpoolController.items}" var="item">
+                    <h:dataTable value="#{ideeController.items}" var="item">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="Titel"/>
@@ -48,7 +48,7 @@
                             <f:facet name="header">
                                 <h:outputText value=""/>
                             </f:facet>
-                            <h:commandLink action="#{ideenansichtController.prepareView}" value="anzeigen"/>
+                            <h:commandLink action="#{ideeController.prepareView}" value="anzeigen"/>
                         </h:column>
                     </h:dataTable>
                 </h:form>

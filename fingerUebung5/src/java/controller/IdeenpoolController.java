@@ -22,17 +22,16 @@ import model.Idee;
 public class IdeenpoolController implements Serializable {
     @EJB
     private IdeeFacade ideeFacade;
-    
+
     public IdeenpoolController() {
     }
-    
+
     private IdeeFacade getFacade() {
         return ideeFacade;
     }
-    
+
     public List<Idee> getItems() {
         List<Idee> ideen = ideeFacade.findAll();
         return ideen;
     }
-    
 }
