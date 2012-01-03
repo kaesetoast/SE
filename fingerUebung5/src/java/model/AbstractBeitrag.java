@@ -4,12 +4,14 @@
  */
 package model;
 
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,6 +32,8 @@ public abstract class AbstractBeitrag {
     protected String beschreibung;
     @ManyToOne
     protected Mitarbeiter autor;
+    @OneToMany
+    private Collection<Kommentar> myKommentare;
 
     /**
      * @return the id
@@ -113,5 +117,19 @@ public abstract class AbstractBeitrag {
      */
     public void setAutor(Mitarbeiter autor) {
 	this.autor = autor;
+    }
+    
+    /**
+     * @return the myKommentare
+     */
+    public Collection<Kommentar> getMyKommentare() {
+	return myKommentare;
+    }
+
+    /**
+     * @param myKommentare the myKommentare to set
+     */
+    public void setMyKommentare(Collection<Kommentar> myKommentare) {
+	this.myKommentare = myKommentare;
     }
 }

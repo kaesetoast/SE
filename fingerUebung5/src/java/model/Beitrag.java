@@ -9,23 +9,7 @@ import javax.persistence.OneToMany;
 public class Beitrag extends AbstractBeitrag implements Serializable {
 
     @OneToMany
-    private Collection<Kommentar> myKommentare;
-    @OneToMany
     private Collection<Bild> myBilder;
-
-    /**
-     * @return the myKommentare
-     */
-    public Collection<Kommentar> getMyKommentare() {
-	return myKommentare;
-    }
-
-    /**
-     * @param myKommentare the myKommentare to set
-     */
-    public void setMyKommentare(Collection<Kommentar> myKommentare) {
-	this.myKommentare = myKommentare;
-    }
 
     /**
      * @return the myBilder
