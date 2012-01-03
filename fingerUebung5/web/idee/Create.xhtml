@@ -15,6 +15,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateIdeeLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{ideeController.selected.id}" title="#{bundle.CreateIdeeTitle_id}" />
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_datum}" for="datum" />
                     <h:inputText id="datum" value="#{ideeController.selected.datum}" title="#{bundle.CreateIdeeTitle_datum}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />

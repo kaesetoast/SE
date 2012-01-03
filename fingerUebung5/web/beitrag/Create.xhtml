@@ -15,6 +15,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateBeitragLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{beitragController.selected.id}" title="#{bundle.CreateBeitragTitle_id}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_datum}" for="datum" />
                     <h:inputText id="datum" value="#{beitragController.selected.datum}" title="#{bundle.CreateBeitragTitle_datum}" >
                         <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -24,10 +26,10 @@
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_titel}" for="titel" />
                     <h:inputText id="titel" value="#{beitragController.selected.titel}" title="#{bundle.CreateBeitragTitle_titel}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_beschreibung}" for="beschreibung" />
-                    <h:inputTextarea id="beschreibung" rows="5" cols="39" value="#{beitragController.selected.beschreibung}" title="#{bundle.CreateBeitragTitle_beschreibung}"/>
+                    <h:inputText id="beschreibung" value="#{beitragController.selected.beschreibung}" title="#{bundle.CreateBeitragTitle_beschreibung}" />
                     <h:outputLabel value="#{bundle.CreateBeitragLabel_autor}" for="autor" />
                     <h:selectOneMenu id="autor" value="#{beitragController.selected.autor}" title="#{bundle.CreateBeitragTitle_autor}" >
-                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}" />
+                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />

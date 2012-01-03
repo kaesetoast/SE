@@ -4,6 +4,7 @@ import model.Idee;
 import controller.util.JsfUtil;
 import controller.util.PaginationHelper;
 import facade.IdeeFacade;
+
 import java.io.Serializable;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
@@ -17,14 +18,14 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
-@ManagedBean(name = "ideeController")
+@ManagedBean (name="ideeController")
 @SessionScoped
 public class IdeeController implements Serializable {
 
+
     private Idee current;
     private DataModel items = null;
-    @EJB
-    private facade.IdeeFacade ejbFacade;
+    @EJB private facade.IdeeFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -42,7 +43,6 @@ public class IdeeController implements Serializable {
     private IdeeFacade getFacade() {
         return ejbFacade;
     }
-
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +54,7 @@ public class IdeeController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
                 }
             };
         }
@@ -67,7 +67,7 @@ public class IdeeController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Idee) getItems().getRowData();
+        current = (Idee)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -90,7 +90,7 @@ public class IdeeController implements Serializable {
     }
 
     public String prepareEdit() {
-        current = (Idee) getItems().getRowData();
+        current = (Idee)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -107,7 +107,7 @@ public class IdeeController implements Serializable {
     }
 
     public String destroy() {
-        current = (Idee) getItems().getRowData();
+        current = (Idee)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreateModel();
@@ -140,14 +140,14 @@ public class IdeeController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
+            selectedItemIndex = count-1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
         }
     }
 
@@ -182,14 +182,14 @@ public class IdeeController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    @FacesConverter(forClass = Idee.class)
+    @FacesConverter(forClass=Idee.class)
     public static class IdeeControllerConverter implements Converter {
 
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            IdeeController controller = (IdeeController) facesContext.getApplication().getELResolver().
+            IdeeController controller = (IdeeController)facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "ideeController");
             return controller.ejbFacade.find(getKey(value));
         }
@@ -214,8 +214,10 @@ public class IdeeController implements Serializable {
                 Idee o = (Idee) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + IdeeController.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+IdeeController.class.getName());
             }
         }
+
     }
+
 }

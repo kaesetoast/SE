@@ -15,6 +15,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateBildLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{bildController.selected.id}" title="#{bundle.CreateBildTitle_id}" />
                     <h:outputLabel value="#{bundle.CreateBildLabel_url}" for="url" />
                     <h:inputText id="url" value="#{bildController.selected.url}" title="#{bundle.CreateBildTitle_url}" />
                     <h:outputLabel value="#{bundle.CreateBildLabel_datum}" for="datum" />
