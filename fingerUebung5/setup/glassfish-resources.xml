@@ -11,4 +11,5 @@
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="finger5DS" object-type="user" pool-name="derby_net_finger5DB_nielsPool"/>
+    <jdbc-resource enabled="true" jndi-name="finger5DB" object-type="user" pool-name="derby_net_finger5DB_nielsPool"/>
 </resources>

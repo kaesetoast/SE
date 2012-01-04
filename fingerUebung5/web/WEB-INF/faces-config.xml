@@ -43,4 +43,11 @@
             <to-view-id>/ideenansicht/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ideenansicht/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Create</from-outcome>
+            <to-view-id>/ideenansicht/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
