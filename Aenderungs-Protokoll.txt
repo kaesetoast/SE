@@ -1,4 +1,2 @@
 Aenderungs-Protokoll (vor CRUD lesen!!!)
 
-- KommentarFacede.java
-- IdeeController.java
