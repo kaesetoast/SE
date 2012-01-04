@@ -4,17 +4,9 @@
  */
 package facade;
 
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import model.Idee;
 import model.Kommentar;
 
 /**
@@ -23,7 +15,6 @@ import model.Kommentar;
  */
 @Stateless
 public class KommentarFacade extends AbstractFacade<Kommentar> {
-
     @PersistenceContext(unitName = "finger5PU")
     private EntityManager em;
 
@@ -34,14 +25,5 @@ public class KommentarFacade extends AbstractFacade<Kommentar> {
     public KommentarFacade() {
         super(Kommentar.class);
     }
-
-    public List<Kommentar> findByIdee(Idee idee) {
-        CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
-        CriteriaQuery cq = cb.createQuery();
-        Root<Kommentar> root = cq.from(Kommentar.class);
-        cq.select(root);
-        cq.where(cb.equal(root.get("myKommentare"), cq));
-        Query q = getEntityManager().createQuery(cq);
-        return q.getResultList();
-    }
+    
 }

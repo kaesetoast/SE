@@ -5,9 +5,7 @@ import controller.util.JsfUtil;
 import controller.util.PaginationHelper;
 import facade.IdeeFacade;
 
-import facade.KommentarFacade;
 import java.io.Serializable;
-import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -19,7 +17,6 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
-import model.Kommentar;
 
 @ManagedBean (name="ideeController")
 @SessionScoped
@@ -31,7 +28,6 @@ public class IdeeController implements Serializable {
     @EJB private facade.IdeeFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
-    private List<Kommentar> kommentare;
 
     public IdeeController() {
     }
@@ -160,11 +156,6 @@ public class IdeeController implements Serializable {
             items = getPagination().createPageDataModel();
         }
         return items;
-    }
-    
-    public List<Kommentar> getKommentare() {
-        KommentarFacade facade = new KommentarFacade();
-        return facade.findByIdee(current);
     }
 
     private void recreateModel() {
