@@ -13,18 +13,20 @@
 
     <h:body>
 
-        <div id="top" class="top">
-            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.png" alt="Meeveo IDEAS"/>
-            <ui:insert name="top">Top</ui:insert>
-        </div>
+        <div id="wrapper">
+            <div id="top" class="top">
+                <img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.png" alt="Meeveo IDEAS"/>
+                <ui:insert name="top">Top</ui:insert>
+            </div>
 
-        <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
+            <div id="content" class="center_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
 
-	<h:panelGroup id="messagePanel" layout="block">
-	    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-	</h:panelGroup>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+        </div>
 
     </h:body>
 

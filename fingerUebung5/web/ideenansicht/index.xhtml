@@ -9,11 +9,9 @@
     <ui:composition template="/frontendTemplate.xhtml">
         <ui:define name="top"><h1>#{ideeController.selected.titel}</h1></ui:define>
         <ui:define name="content">
-            <p>
-                <h:form>
-                    <h:commandLink action="/ideenpool/index.xhtml" value="Ideenpool"/>
-                </h:form>
-            </p>
+            <h:form>
+                <h:commandLink action="/ideenpool/index.xhtml" value="Ideenpool"/>
+            </h:form>
             <p>
                 <h:outputText value="#{ideeController.selected.beschreibung}" />
             </p>
@@ -30,7 +28,7 @@
                     <h:commandLink action="#{ideeController.update}" value="Bewertung abgeben" />
                 </h:form>
             </p>
-            
+
             <f:view>
                 <h:form>
                     <h1><h:outputText value="Diese Idee kommentieren"/></h1>
@@ -43,7 +41,7 @@
                     <h:commandLink action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
                 </h:form>
             </f:view>
-            
+
             <h2>Kommentare</h2>
             <c:forEach var="item" items="#{ideeController.selected.myKommentare}">
                 <div class="kommentar">

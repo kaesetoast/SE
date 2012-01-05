@@ -1,3 +1,7 @@
+#wrapper {
+    width: 960px;
+    margin: auto;
+}
 
 #top {
     position: relative;
@@ -30,7 +34,9 @@
 .center_content {
     position: relative;
     background-color: #dddddd;
-    padding: 5px;
+    padding: 10px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
 }
 
 .left_content {
@@ -46,15 +52,15 @@
 }
 
 #top a:link, #top a:visited {
-  color: white;
-  font-weight : bold;
-  text-decoration: none;
+    color: white;
+    font-weight : bold;
+    text-decoration: none;
 }
 
 #top a:link:hover, #top a:visited:hover  {
-  color: black;
-  font-weight : bold;
-  text-decoration : underline;
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
 }
 
 #top h1 {
