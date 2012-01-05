@@ -65,6 +65,7 @@ public abstract class AbstractBeitrag {
     }
 
     /**
+     * @author Philipp
      * @return the bewertung
      */
     public float getBewertung() {
@@ -144,6 +145,7 @@ public abstract class AbstractBeitrag {
     }
 
     /**
+     * @author philipp
      * @param bewertungAnzahl the bewertungAnzahl to set
      */
     public void setBewertungAnzahl(int bewertungAnzahl) throws IllegalAccessException {
