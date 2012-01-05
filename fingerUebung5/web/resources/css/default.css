@@ -9,10 +9,10 @@ body {
 h1 {
     font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
     border-bottom: 1px solid #AFAFAF; 
-    font-size:  16px;
+    font-size:  18px;
     font-weight: bold;
-    margin: 0px;
-    padding: 0px;
+    margin: 10px 0px 5px 0px;
+    padding: 0px 0px 3px 0px;
     color: #D20005;
 }
 
@@ -26,4 +26,8 @@ a:link:hover, a:visited:hover  {
   color: #045491;
   font-weight : bold;
   text-decoration : underline;
+}
+
+ table {
+    border-spacing: 10px;
 }
