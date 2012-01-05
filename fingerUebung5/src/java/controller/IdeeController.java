@@ -132,6 +132,7 @@ public class IdeeController implements Serializable {
 	    newKommentar.setDatum(new Date());
 	    getKommentarFacade().create(newKommentar);
 	    current.getMyKommentare().add(newKommentar);
+            newKommentar = null;
 	    return update();
 	} catch (Exception e) {
 	    JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
