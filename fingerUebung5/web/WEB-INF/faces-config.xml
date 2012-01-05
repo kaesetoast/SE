@@ -50,6 +50,10 @@
             <from-outcome>Create</from-outcome>
             <to-view-id>/ideenpool/create.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>List</from-outcome>
+            <to-view-id>/ideenpool/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/ideenansicht/index.xhtml</from-view-id>
