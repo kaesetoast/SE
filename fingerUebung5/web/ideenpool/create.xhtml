@@ -16,7 +16,7 @@ and open the template in the editor.
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_titel}" for="titel" />
                     <h:inputText id="titel" value="#{ideeController.selected.titel}" title="#{bundle.CreateIdeeTitle_titel}" />
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_beschreibung}" for="beschreibung" />
-                    <h:inputText id="beschreibung" value="#{ideeController.selected.beschreibung}" title="#{bundle.CreateIdeeTitle_beschreibung}" />
+                    <h:inputTextarea id="beschreibung" value="#{ideeController.selected.beschreibung}" title="#{bundle.CreateIdeeTitle_beschreibung}" />
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_autor}" for="autor" />
                     <h:selectOneMenu id="autor" value="#{ideeController.selected.autor}" title="#{bundle.CreateIdeeTitle_autor}" >
                         <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>

@@ -38,7 +38,7 @@
                         <h:outputLabel value="Titel:" for="titel" />
                         <h:inputText id="titel" value="#{ideeController.newKommentar.titel}" title="Titel" />
                         <h:outputLabel value="Beschreibung:" for="beschreibung" />
-                        <h:inputText id="beschreibung" value="#{ideeController.newKommentar.beschreibung}" title="Beschreibung" />
+                        <h:inputTextarea id="beschreibung" value="#{ideeController.newKommentar.beschreibung}" title="Beschreibung" />
                     </h:panelGrid>
                     <h:commandLink action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
                 </h:form>
