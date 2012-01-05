@@ -30,19 +30,7 @@
                     <h:commandLink action="#{ideeController.update}" value="Bewertung abgeben" />
                 </h:form>
             </p>
-            <h2>Kommentare</h2>
-            <c:forEach var="item" items="#{ideeController.selected.myKommentare}">
-                <div class="kommentar">
-                    <h1><h:outputText value="#{item.titel}" /></h1>
-                    <p class="kommentar-body">
-                        <h:outputText value="#{item.beschreibung}" />
-                    </p>
-                    <p class="kommentar-footer">
-                        <h:outputText value="Von #{item.autor} am #{item.datum}" />
-                    </p>
-                </div>
-            </c:forEach>
-
+            
             <f:view>
                 <h:form>
                     <h1><h:outputText value="Diese Idee kommentieren"/></h1>
@@ -55,7 +43,19 @@
                     <h:commandLink action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
                 </h:form>
             </f:view>
-
+            
+            <h2>Kommentare</h2>
+            <c:forEach var="item" items="#{ideeController.selected.myKommentare}">
+                <div class="kommentar">
+                    <h1><h:outputText value="#{item.titel}" /></h1>
+                    <p class="kommentar-body">
+                        <h:outputText value="#{item.beschreibung}" />
+                    </p>
+                    <p class="kommentar-footer">
+                        <h:outputText value="Von #{item.autor} am #{item.datum}" />
+                    </p>
+                </div>
+            </c:forEach>
 
         </ui:define>
     </ui:composition>
