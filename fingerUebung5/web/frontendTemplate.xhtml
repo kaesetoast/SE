@@ -14,20 +14,20 @@
     </h:head>
 
     <h:body>
-
+        
         <div id="wrapper">
             <div id="top" class="top">
                 <a href="#{facesContext.externalContext.requestContextPath}"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.png" alt="Meeveo IDEAS"/></a>
                 <ui:insert name="top">Top</ui:insert>
             </div>
+            
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
 
             <div id="content" class="center_content">
                 <ui:insert name="content">Content</ui:insert>
             </div>
-
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
 
             <div id="bottom">
                 &copy; 2012 by Meeveo GbR
