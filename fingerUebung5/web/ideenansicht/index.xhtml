@@ -39,24 +39,18 @@
                 <h:form>
                     <h1><h:outputText value="Create/Edit"/></h1>
                     <h:panelGrid columns="2">
-                        <h:outputLabel value="Id:" for="id" />
-                        <h:inputText id="id" value="#{kommentarController.selected.id}" title="Id" />
-                        <h:outputLabel value="Datum:" for="datum" />
-                        <h:inputText id="datum" value="#{kommentarController.selected.datum}" title="Datum" >
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:inputText>
                         <h:outputLabel value="Bewertung:" for="bewertung" />
-                        <h:inputText id="bewertung" value="#{kommentarController.selected.bewertung}" title="Bewertung" />
+                        <h:inputText id="bewertung" value="#{ideeController.newKommentar.bewertung}" title="Bewertung" />
                         <h:outputLabel value="Titel:" for="titel" />
-                        <h:inputText id="titel" value="#{kommentarController.selected.titel}" title="Titel" />
+                        <h:inputText id="titel" value="#{ideeController.newKommentar.titel}" title="Titel" />
                         <h:outputLabel value="Beschreibung:" for="beschreibung" />
-                        <h:inputText id="beschreibung" value="#{kommentarController.selected.beschreibung}" title="Beschreibung" />
+                        <h:inputText id="beschreibung" value="#{ideeController.newKommentar.beschreibung}" title="Beschreibung" />
                         <h:outputLabel value="Autor:" for="autor" />
-                        <h:selectOneMenu id="autor" value="#{kommentarController.selected.autor}" title="Autor" >
+                        <h:selectOneMenu id="autor" value="#{ideeController.newKommentar.autor}" title="Autor" >
                             <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
                         </h:selectOneMenu>
                     </h:panelGrid>
-                    <h:commandLink action="#{kommentarController.create}" value="#{bundle.CreateKommentarSaveLink}" />
+                    <h:commandLink action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
                 </h:form>
             </f:view>
 

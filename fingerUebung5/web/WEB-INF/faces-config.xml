@@ -46,7 +46,7 @@
     <navigation-rule>
         <from-view-id>/ideenansicht/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>Create</from-outcome>
+            <from-outcome>View</from-outcome>
             <to-view-id>/ideenansicht/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

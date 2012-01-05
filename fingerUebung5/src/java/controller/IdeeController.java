@@ -5,7 +5,9 @@ import controller.util.JsfUtil;
 import controller.util.PaginationHelper;
 import facade.IdeeFacade;
 
+import facade.KommentarFacade;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -17,6 +19,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import model.Kommentar;
 
 @ManagedBean (name="ideeController")
 @SessionScoped
@@ -24,8 +27,10 @@ public class IdeeController implements Serializable {
 
 
     private Idee current;
+    private Kommentar newKommentar;
     private DataModel items = null;
     @EJB private facade.IdeeFacade ejbFacade;
+    @EJB private facade.KommentarFacade kommentarFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -39,10 +44,20 @@ public class IdeeController implements Serializable {
         }
         return current;
     }
+    
+    public Kommentar getNewKommentar() {
+        newKommentar = new Kommentar();
+        return newKommentar;
+    }
 
     private IdeeFacade getFacade() {
         return ejbFacade;
     }
+    
+    private KommentarFacade getKommentarFacade() {
+        return kommentarFacade;
+    }
+    
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -83,6 +98,19 @@ public class IdeeController implements Serializable {
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("IdeeCreated"));
             return prepareCreate();
+        } catch (Exception e) {
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            return null;
+        }
+    }
+    
+    public String addKommentar() {
+        try {
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" + newKommentar);
+            newKommentar.setDatum(new Date());
+            getKommentarFacade().create(newKommentar);
+            current.getMyKommentare().add(newKommentar);
+            return update();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
             return null;

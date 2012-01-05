@@ -5,4 +5,9 @@ import javax.persistence.Entity;
 
 @Entity
 public class Kommentar extends AbstractBeitrag implements Serializable {
+    
+    public String toString() {
+        return titel + ": " + beschreibung;
+    }
+    
 }
