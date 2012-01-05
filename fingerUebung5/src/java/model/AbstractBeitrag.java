@@ -68,14 +68,16 @@ public abstract class AbstractBeitrag {
      * @return the bewertung
      */
     public float getBewertung() {
-	return bewertung;
+	return bewertung / bewertungAnzahl;
     }
 
     /**
+     * @author philipp
      * @param bewertung the bewertung to set
      */
     public void setBewertung(float bewertung) {
 	this.bewertung = bewertung;
+        this.bewertungAnzahl++;
     }
 
     /**
@@ -144,7 +146,7 @@ public abstract class AbstractBeitrag {
     /**
      * @param bewertungAnzahl the bewertungAnzahl to set
      */
-    public void setBewertungAnzahl(int bewertungAnzahl) {
-        this.bewertungAnzahl = bewertungAnzahl;
+    public void setBewertungAnzahl(int bewertungAnzahl) throws IllegalAccessException {
+        throw new IllegalAccessException("bewertungsAnzahl must not be set manually.");
     }
 }
