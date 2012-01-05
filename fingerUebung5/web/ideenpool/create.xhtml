@@ -9,24 +9,19 @@ and open the template in the editor.
     <ui:composition template="/frontendTemplate.xhtml">
         <ui:define name="top"><h1>Ideen Erstellen</h1></ui:define>
         <ui:define name="content">
-
+            
             <h:form>
+                <h:commandLink action="#{ideeController.prepareList}" value="#{bundle.CreateIdeeShowAllLink}" immediate="true"/>
                 <h:panelGrid columns="2">
 
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_titel}" for="titel" />
                     <h:inputText id="titel" value="#{ideeController.selected.titel}" title="#{bundle.CreateIdeeTitle_titel}" />
                     <h:outputLabel value="#{bundle.CreateIdeeLabel_beschreibung}" for="beschreibung" />
                     <h:inputTextarea id="beschreibung" value="#{ideeController.selected.beschreibung}" title="#{bundle.CreateIdeeTitle_beschreibung}" />
-                    <h:outputLabel value="#{bundle.CreateIdeeLabel_autor}" for="autor" />
-                    <h:selectOneMenu id="autor" value="#{ideeController.selected.autor}" title="#{bundle.CreateIdeeTitle_autor}" >
-                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
 
                 </h:panelGrid>
 
-		<h:commandLink action="#{ideeController.prepareList}" value="#{bundle.CreateIdeeShowAllLink}" immediate="true"/>
-		<h:outputText value=" | "/>
-                <h:commandLink action="#{ideeController.createWithDate}" value="#{bundle.CreateIdeeSaveLink}" />
+                <h:commandButton action="#{ideeController.createWithDate}" value="#{bundle.CreateIdeeSaveLink}" />
 
             </h:form>
         </ui:define>

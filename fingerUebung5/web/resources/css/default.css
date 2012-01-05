@@ -31,3 +31,16 @@ a:link:hover, a:visited:hover  {
  table {
     border-spacing: 10px;
 }
+
+input[type=text] {
+    width: 500px;
+    border: 1px solid gray;
+    padding: 2px;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    border: 1px solid gray;
+    padding: 2px;
+}
