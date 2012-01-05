@@ -46,7 +46,9 @@ public class IdeeController implements Serializable {
     }
     
     public Kommentar getNewKommentar() {
-        newKommentar = new Kommentar();
+        if (newKommentar == null) {
+            newKommentar = new Kommentar();
+        }
         return newKommentar;
     }
 
