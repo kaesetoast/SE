@@ -6,6 +6,7 @@ package model;
 
 import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,7 +34,7 @@ public abstract class AbstractBeitrag {
     protected String beschreibung;
     @ManyToOne
     protected Mitarbeiter autor;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private Collection<Kommentar> myKommentare;
 
     /**
@@ -69,9 +70,9 @@ public abstract class AbstractBeitrag {
      * @return the bewertung
      */
     public float getBewertung() {
-        if (bewertungAnzahl > 0) {
-            return bewertung / bewertungAnzahl;
-        }
+	if (bewertungAnzahl > 0) {
+	    return bewertung / bewertungAnzahl;
+	}
 	return bewertung;
     }
 
@@ -125,7 +126,7 @@ public abstract class AbstractBeitrag {
     public void setAutor(Mitarbeiter autor) {
 	this.autor = autor;
     }
-    
+
     /**
      * @return the myKommentare
      */
@@ -144,7 +145,7 @@ public abstract class AbstractBeitrag {
      * @return the bewertungAnzahl
      */
     public int getBewertungAnzahl() {
-        return bewertungAnzahl;
+	return bewertungAnzahl;
     }
 
     /**
@@ -152,6 +153,6 @@ public abstract class AbstractBeitrag {
      * @param bewertungAnzahl the bewertungAnzahl to set
      */
     public void setBewertungAnzahl(int bewertungAnzahl) throws IllegalAccessException {
-        throw new IllegalAccessException("bewertungsAnzahl must not be set manually.");
+	throw new IllegalAccessException("bewertungsAnzahl must not be set manually.");
     }
 }
