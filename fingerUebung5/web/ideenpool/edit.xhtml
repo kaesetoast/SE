@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/frontendTemplate.xhtml">
+        <ui:define name="top"><h1>#{ideeController.selected.titel}</h1></ui:define>
+	<ui:define name="content">
+
+            <h:form>
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel value="#{bundle.EditIdeeLabel_titel}" for="titel" />
+                    <h:inputText id="titel" value="#{ideeController.selected.titel}" title="#{bundle.EditIdeeTitle_titel}" />
+                    <h:outputLabel value="#{bundle.EditIdeeLabel_beschreibung}" for="beschreibung" />
+                    <h:inputText id="beschreibung" value="#{ideeController.selected.beschreibung}" title="#{bundle.EditIdeeTitle_beschreibung}" />
+                    <h:outputLabel value="#{bundle.EditIdeeLabel_autor}" for="autor" />
+                    <h:selectOneMenu id="autor" value="#{ideeController.selected.autor}" title="#{bundle.EditIdeeTitle_autor}" >
+                        <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+		    <h:outputLabel value="#{bundle.EditIdeeLabel_bewertung}" for="bewertung" />
+                    <h:inputText id="bewertung" value="#{ideeController.selected.bewertung}" title="#{bundle.EditIdeeTitle_bewertung}" />
+
+                </h:panelGrid>
+                <h:commandLink action="#{ideeController.update}" value="#{bundle.EditIdeeSaveLink}"/>
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+
+
+</html>
