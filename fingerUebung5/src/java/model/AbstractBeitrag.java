@@ -27,7 +27,8 @@ public abstract class AbstractBeitrag {
     protected long id;
     @Temporal(TemporalType.DATE)
     protected Date datum;
-    protected int bewertung;
+    protected float bewertung;
+    private int bewertungAnzahl;
     protected String titel;
     protected String beschreibung;
     @ManyToOne
@@ -66,14 +67,14 @@ public abstract class AbstractBeitrag {
     /**
      * @return the bewertung
      */
-    public int getBewertung() {
+    public float getBewertung() {
 	return bewertung;
     }
 
     /**
      * @param bewertung the bewertung to set
      */
-    public void setBewertung(int bewertung) {
+    public void setBewertung(float bewertung) {
 	this.bewertung = bewertung;
     }
 
@@ -131,5 +132,19 @@ public abstract class AbstractBeitrag {
      */
     public void setMyKommentare(Collection<Kommentar> myKommentare) {
 	this.myKommentare = myKommentare;
+    }
+
+    /**
+     * @return the bewertungAnzahl
+     */
+    public int getBewertungAnzahl() {
+        return bewertungAnzahl;
+    }
+
+    /**
+     * @param bewertungAnzahl the bewertungAnzahl to set
+     */
+    public void setBewertungAnzahl(int bewertungAnzahl) {
+        this.bewertungAnzahl = bewertungAnzahl;
     }
 }
