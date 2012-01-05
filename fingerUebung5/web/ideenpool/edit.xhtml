@@ -21,8 +21,6 @@ and open the template in the editor.
                     <h:selectOneMenu id="autor" value="#{ideeController.selected.autor}" title="#{bundle.EditIdeeTitle_autor}" >
                         <f:selectItems value="#{mitarbeiterController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-		    <h:outputLabel value="#{bundle.EditIdeeLabel_bewertung}" for="bewertung" />
-                    <h:inputText id="bewertung" value="#{ideeController.selected.bewertung}" title="#{bundle.EditIdeeTitle_bewertung}" />
 
                 </h:panelGrid>
 
