@@ -23,16 +23,16 @@
         <Node id="kommentar/List.xhtml" x="150" y="300" zoom="true"/>
         <Node id="bild/Edit.xhtml" x="650" y="300" zoom="true"/>
         <Node id="beitrag/Create.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="ideenpool/index.xhtml" x="919" y="976" zoom="true"/>
         <Node id="anhang/View.xhtml" x="150" y="1050" zoom="true"/>
-        <Node id="ideenpool/index.xhtml" x="922" y="976" zoom="true"/>
-        <Node id="beitrag/View.xhtml" x="1650" y="150" zoom="true"/>
         <Node id="anhang/Edit.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="beitrag/View.xhtml" x="1650" y="150" zoom="true"/>
         <Node id="mitarbeiterbild/View.xhtml" x="1650" y="300" zoom="true"/>
         <Node id="ideenpool/create.xhtml" x="1248" y="834" zoom="true"/>
         <Node id="anhang/Create.xhtml" x="900" y="600" zoom="true"/>
         <Node id="mitarbeiterbild/List.xhtml" x="650" y="600" zoom="true"/>
-        <Node id="idee/View.xhtml" x="400" y="900" zoom="true"/>
         <Node id="index.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="idee/View.xhtml" x="400" y="900" zoom="true"/>
         <Node id="bild/View.xhtml" x="650" y="150" zoom="true"/>
         <Node id="kommentar/Create.xhtml" x="1400" y="300" zoom="true"/>
         <Node id="mitarbeiterbild/Create.xhtml" x="1002" y="680" zoom="true"/>
