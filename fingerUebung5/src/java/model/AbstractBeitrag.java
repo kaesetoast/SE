@@ -69,7 +69,10 @@ public abstract class AbstractBeitrag {
      * @return the bewertung
      */
     public float getBewertung() {
-	return bewertung / bewertungAnzahl;
+        if (bewertungAnzahl > 0) {
+            return bewertung / bewertungAnzahl;
+        }
+	return bewertung;
     }
 
     /**
