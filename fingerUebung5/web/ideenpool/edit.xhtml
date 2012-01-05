@@ -25,7 +25,11 @@ and open the template in the editor.
                     <h:inputText id="bewertung" value="#{ideeController.selected.bewertung}" title="#{bundle.EditIdeeTitle_bewertung}" />
 
                 </h:panelGrid>
+
+		<h:commandLink action="#{ideeController.prepareList}" value="#{bundle.CreateIdeeShowAllLink}" immediate="true"/>
+		<h:outputText value=" | "/>
                 <h:commandLink action="#{ideeController.update}" value="#{bundle.EditIdeeSaveLink}"/>
+
             </h:form>
 
         </ui:define>

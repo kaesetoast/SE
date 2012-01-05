@@ -46,6 +46,10 @@
             <from-outcome>Edit</from-outcome>
             <to-view-id>/ideenpool/edit.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>Create</from-outcome>
+            <to-view-id>/ideenpool/create.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/ideenansicht/index.xhtml</from-view-id>
@@ -58,6 +62,17 @@
         <from-view-id>/ideenpool/edit.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>View</from-outcome>
+            <to-view-id>/ideenpool/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>List</from-outcome>
+            <to-view-id>/ideenpool/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ideenpool/create.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>List</from-outcome>
             <to-view-id>/ideenpool/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
