@@ -80,7 +80,7 @@ public abstract class AbstractBeitrag {
      * @param bewertung the bewertung to set
      */
     public void setBewertung(float bewertung) {
-	this.bewertung = bewertung;
+	this.bewertung += bewertung;
         this.bewertungAnzahl++;
     }
 
