@@ -3,4 +3,5 @@ $(document).ready(function(){
    $(".kommentar-toggle").click(function(){
        $(".kommentar-form").toggle();
    });
+   setTimeout(function(){ jQuery("#messagePanel").fadeOut("slow"); }, 5000);
 });
