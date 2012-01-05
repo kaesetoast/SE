@@ -32,14 +32,16 @@
 
             <f:view>
                 <h:form>
-                    <h1><h:outputText value="Diese Idee kommentieren"/></h1>
-                    <h:panelGrid columns="2">
-                        <h:outputLabel value="Titel:" for="titel" />
-                        <h:inputText id="titel" value="#{ideeController.newKommentar.titel}" title="Titel" />
-                        <h:outputLabel value="Beschreibung:" for="beschreibung" />
-                        <h:inputTextarea id="beschreibung" value="#{ideeController.newKommentar.beschreibung}" title="Beschreibung" />
-                    </h:panelGrid>
-                    <h:commandButton action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
+                    <h1 class="kommentar-toggle"><h:outputText value="Diese Idee kommentieren"/></h1>
+                    <div class="kommentar-form">
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Titel:" for="titel" />
+                            <h:inputText id="titel" value="#{ideeController.newKommentar.titel}" title="Titel" />
+                            <h:outputLabel value="Beschreibung:" for="beschreibung" />
+                            <h:inputTextarea id="beschreibung" value="#{ideeController.newKommentar.beschreibung}" title="Beschreibung" />
+                        </h:panelGrid>
+                        <h:commandButton action="#{ideeController.addKommentar}" value="#{bundle.CreateKommentarSaveLink}" />
+                    </div>
                 </h:form>
             </f:view>
 
